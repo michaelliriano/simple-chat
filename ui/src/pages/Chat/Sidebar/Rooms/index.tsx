@@ -29,6 +29,7 @@ export default function Rooms(props: RoomsPropType) {
 
   const changeRoom = useCallback(
     (room: string) => {
+      if(room === user.room)return;
       dispatch(setRoom(room));
       socket.emit('leave', { ...user });
     },
