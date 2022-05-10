@@ -3,15 +3,19 @@ import { Provider } from 'react-redux';
 import { store } from '../../app/store';
 import Page from '.';
 import { BrowserRouter } from 'react-router-dom';
+import dark from '../../theme/dark';
+import { ThemeProvider } from '@emotion/react';
 
 test('renders chat page', () => {
   render(
     <Provider store={store}>
-      <BrowserRouter>
-        <Page />
-      </BrowserRouter>
+      <ThemeProvider theme={dark}>
+        <BrowserRouter>
+          <Page />
+        </BrowserRouter>
+      </ThemeProvider>
     </Provider>,
   );
-  const btn = screen.getByText(/Chat/i);
+  const btn = screen.getByText(/Send/i);
   expect(btn).toBeInTheDocument();
 });

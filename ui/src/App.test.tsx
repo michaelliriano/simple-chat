@@ -10,6 +10,6 @@ test('renders app', () => {
       <App />
     </Provider>,
   );
-  const nav = screen.getByText(/chat app/i);
+  const nav = screen.getByText(/get a room/i);
   expect(nav).toBeInTheDocument();
 });
