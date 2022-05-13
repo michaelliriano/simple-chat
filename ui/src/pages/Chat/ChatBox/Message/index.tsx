@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper, Typography } from '@mui/material';
+import moment from 'moment';
 
 type MessagePropTypes = {
   isSender?: boolean;
@@ -43,7 +44,7 @@ export default function Message(props: MessagePropTypes) {
               {props.message}
             </Typography>
           </Paper>
-          {/* <Typography>{props.sender}</Typography> */}
+          <Typography>{moment(props.timestamp).format('hh:mma')}</Typography>
         </div>
       ) : (
         <div
@@ -71,7 +72,10 @@ export default function Message(props: MessagePropTypes) {
               {props.message}
             </Typography>
           </Paper>
-          <Typography>{props.sender}</Typography>
+
+          <Typography>
+            Sent by {props.sender} - {moment(props.timestamp).format('hh:mma')}
+          </Typography>
         </div>
       )}
     </div>
