@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(express());
-require('./db');
+// require('./db');
 const {
   joinRoom,
   sendMessage,
@@ -13,7 +13,7 @@ const {
   userTyping,
 } = require('./socket');
 
-const PORT = process.env.PORT || 2000;
+const PORT = 8081;
 
 app.use(cors());
 
