@@ -74,7 +74,7 @@ export default function Message(props: MessagePropTypes) {
           </Paper>
 
           <Typography>
-            Sent by {props.sender} - {moment(props.timestamp).format('hh:mma')}
+            {props.sender} - {moment(props.timestamp).format('hh:mma')}
           </Typography>
         </div>
       )}
